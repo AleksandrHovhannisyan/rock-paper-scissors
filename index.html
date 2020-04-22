@@ -1,17 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
-  <title>Frontend Mentor | Rock, Paper, Scissors</title>
-  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-</head>
-<body>  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="https://aleksandrhovhannisyan.github.io/">Aleksandr Hovhannisyan</a>.
-  </div>
-  <script src="assets/scripts/index.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="assets/img/favicon-32x32.png"
+    />
+    <title>Frontend Mentor | Rock, Paper, Scissors</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="game-header">
+      <img src="assets/img/logo.svg" alt="ROCK PAPER SCISSORS" />
+      <div id="score"></div>
+    </header>
+    <section class="game">
+      <div id="hand-options">
+        <img
+          class="hand rock"
+          src="assets/img/icon-rock.svg"
+          alt="Rock"
+          title="Rock"
+        />
+        <img
+          class="hand paper"
+          src="assets/img/icon-paper.svg"
+          alt="Paper"
+          title="Paper"
+        />
+        <img
+          class="hand scissors"
+          src="assets/img/icon-scissors.svg"
+          alt="Scissors"
+          title="Scissors"
+        />
+      </div>
+      <div id="played-hands">
+        <div id="player-hand" class="hand"></div>
+        <div id="house-hand" class="hand"></div>
+      </div>
+      <div id="round-result">
+        <p class="result-text"></p>
+        <a href="#" class="play-again button">
+          PLAY AGAIN
+        </a>
+      </div>
+    </section>
+    <a href="#" class="rules-button">RULES</a>
+    <section class="rules modal"></section>
+    <div class="attribution">
+      Challenge by
+      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+        >Frontend Mentor</a
+      >. Coded by
+      <a href="https://aleksandrhovhannisyan.github.io/"
+        >Aleksandr Hovhannisyan</a
+      >.
+    </div>
+    <script src="assets/scripts/index.js"></script>
+  </body>
 </html>
