@@ -20,6 +20,7 @@
 
 body {
   font-family: 'Barlow Semi Condensed';
+  background: radial-gradient(var(--bg-1), var(--bg-2));
 }
 
 body, .rps {
@@ -27,17 +28,13 @@ body, .rps {
 }
 
 .rps {
-  display: grid;
-  grid-template-columns: minmax(1.2rem, 1fr) minmax(0, 600px) minmax(1.2rem, 1fr);
-  background: radial-gradient(var(--bg-1), var(--bg-2));
-}
-
-.rps > * {
-  grid-column: 2;
+  max-width: 590px;
+  margin: 0 auto;
+  padding: 1.2rem
 }
 
 .rps__header {
-  border: solid 2px var(--header-outline);
+  border: solid 5px var(--header-outline);
   border-radius: 10px;
   height: 130px;
   grid-row: 1;
