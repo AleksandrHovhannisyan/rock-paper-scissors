@@ -20,47 +20,51 @@
     <main class="rps">
       <header class="rps__header">
         <div class="rps__header__container">
-          <img class="rps__logo" src="assets/img/logo.svg" alt="ROCK PAPER SCISSORS" />
+          <img
+            class="rps__logo"
+            src="assets/img/logo.svg"
+            alt="ROCK PAPER SCISSORS"
+          />
           <div class="rps__score">12</div>
         </div>
       </header>
-      <section class="rps__game">
-        <div id="rps__playableHands">
+      <section class="rps__game centered">
+        <div class="rps__playableHands">
           <img
-            class="hand rock"
-            src="assets/img/icon-rock.svg"
-            alt="Rock"
-            title="Rock"
-            data-hand="rock"
-          />
-          <img
-            class="hand paper"
+            class="selectable hand paper"
             src="assets/img/icon-paper.svg"
             alt="Paper"
             title="Paper"
             data-hand="paper"
           />
           <img
-            class="hand scissors"
+            class="selectable hand rock"
+            src="assets/img/icon-rock.svg"
+            alt="Rock"
+            title="Rock"
+            data-hand="rock"
+          />
+          <img
+            class="selectable hand scissors"
             src="assets/img/icon-scissors.svg"
             alt="Scissors"
             title="Scissors"
             data-hand="scissors"
           />
         </div>
-        <div class="rps__playedHands">
+        <div class="rps__playedHands hidden">
           <div id="rps__playerHand" class="hand"></div>
           <div id="rps__houseHand" class="hand"></div>
         </div>
-        <div class="rps__result">
+        <div class="rps__result hidden">
           <p id="rps__result__text"></p>
           <a href="#" class="play-again button">
             PLAY AGAIN
           </a>
         </div>
       </section>
-      <section class="rps__rules">
-        <a href="#" class="rps__rules__button">RULES</a>
+      <section class="rps__rules centered">
+        <a href="#" id="rps__rules__button">RULES</a>
         <div class="rps__rules__modal hidden">
           <img
             src="assets/img/image-rules.svg"

@@ -1,10 +1,10 @@
 :root {
-  --paper-light: hsl(230, 89%, 62%);
-  --paper-dark: hsl(230, 89%, 65%);
-  --scissors-light: hsl(39, 89%, 49%);
-  --scissors-dark: hsl(40, 84%, 53%);
-  --rock-light: hsl(349, 71%, 52%);
-  --rock-dark: hsl(349, 70%, 56%);
+  --paper-light: hsl(230, 89%, 65%);
+  --paper-dark: hsl(230, 89%, 62%);
+  --scissors-light: hsl(40, 84%, 53%);
+  --scissors-dark: hsl(39, 89%, 49%);
+  --rock-light: hsl(349, 70%, 56%);
+  --rock-dark: hsl(349, 71%, 52%);
   --dark-text: hsl(229, 25%, 31%);
   --score-text: hsl(229, 64%, 46%);
   --header-outline: hsl(217, 16%, 45%);
@@ -30,7 +30,10 @@ body, .rps {
 .rps {
   max-width: 590px;
   margin: 0 auto;
-  padding: 1.2rem
+  padding: 1.2rem;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: max-content max-content 100px;
 }
 
 .rps__header {
@@ -70,6 +73,81 @@ body, .rps {
   content: "SCORE";
   color: var(--score-text);
   font-size: 0.875rem;
+}
+
+.rps__game {
+  height: 70vh;
+  grid-row: 2;
+}
+
+.rps__playableHands {
+  background: url("../img/bg-triangle.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 200px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hand {
+  position: relative;
+  padding: 30px;
+  background-color: white;
+  border-radius: 50%;
+  border-style: solid;
+  border-width: 15px;
+}
+
+.paper {
+  top: -80px;
+  left: 50px;
+  border-color: var(--paper-light);
+}
+
+.rock {
+  top: 80px;
+  border-color: var(--rock-light);
+}
+
+.scissors {
+  top: -80px;
+  right: 50px;
+  border-color: var(--scissors-light);
+}
+
+.rps__rules {
+  height: 100px;
+  grid-row: 3;
+}
+
+#rps__rules__button {
+  border: solid 2px var(--header-outline);
+  border-radius: 10px;
+  width: 160px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: white;
+}
+
+.hidden {
+  display: none;
+}
+
+.selectable {
+  cursor: pointer;
+}
+
+.centered {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .attribution {
