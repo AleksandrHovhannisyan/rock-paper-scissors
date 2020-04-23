@@ -17,58 +17,63 @@
     />
   </head>
   <body>
-    <header class="game-header">
-      <img src="assets/img/logo.svg" alt="ROCK PAPER SCISSORS" />
-      <div id="score"></div>
-    </header>
-    <section class="game">
-      <div id="hand-options">
+    <main class="game-wrapper">
+      <header class="game-header">
+        <img src="assets/img/logo.svg" alt="ROCK PAPER SCISSORS" />
+        <div id="score"></div>
+      </header>
+      <section class="game">
+        <div id="playable-hands">
+          <img
+            class="hand rock"
+            src="assets/img/icon-rock.svg"
+            alt="Rock"
+            title="Rock"
+            data-hand="Rock"
+          />
+          <img
+            class="hand paper"
+            src="assets/img/icon-paper.svg"
+            alt="Paper"
+            title="Paper"
+            data-hand="Paper"
+          />
+          <img
+            class="hand scissors"
+            src="assets/img/icon-scissors.svg"
+            alt="Scissors"
+            title="Scissors"
+            data-hand="Scissors"
+          />
+        </div>
+        <div id="played-hands">
+          <div id="player-hand" class="hand"></div>
+          <div id="house-hand" class="hand"></div>
+        </div>
+        <div id="round-result">
+          <p class="result-text"></p>
+          <a href="#" class="play-again button">
+            PLAY AGAIN
+          </a>
+        </div>
+      </section>
+      <a href="#" class="rules-button">RULES</a>
+      <section class="rules modal">
         <img
-          class="hand rock"
-          src="assets/img/icon-rock.svg"
-          alt="Rock"
-          title="Rock"
+          src="assets/img/image-rules.svg"
+          alt="Rock beats scissors, scissors beats paper, and paper beats rock."
         />
-        <img
-          class="hand paper"
-          src="assets/img/icon-paper.svg"
-          alt="Paper"
-          title="Paper"
-        />
-        <img
-          class="hand scissors"
-          src="assets/img/icon-scissors.svg"
-          alt="Scissors"
-          title="Scissors"
-        />
+      </section>
+      <div class="attribution">
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+          >Frontend Mentor</a
+        >. Coded by
+        <a href="https://aleksandrhovhannisyan.github.io/"
+          >Aleksandr Hovhannisyan</a
+        >.
       </div>
-      <div id="played-hands">
-        <div id="player-hand" class="hand"></div>
-        <div id="house-hand" class="hand"></div>
-      </div>
-      <div id="round-result">
-        <p class="result-text"></p>
-        <a href="#" class="play-again button">
-          PLAY AGAIN
-        </a>
-      </div>
-    </section>
-    <a href="#" class="rules-button">RULES</a>
-    <section class="rules modal">
-      <img
-        src="assets/img/image-rules.svg"
-        alt="Rock beats scissors, scissors beats paper, and paper beats rock."
-      />
-    </section>
-    <div class="attribution">
-      Challenge by
-      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
-        >Frontend Mentor</a
-      >. Coded by
-      <a href="https://aleksandrhovhannisyan.github.io/"
-        >Aleksandr Hovhannisyan</a
-      >.
-    </div>
+    </main>
     <script src="assets/scripts/index.js"></script>
   </body>
 </html>
