@@ -18,6 +18,26 @@
     margin: 0;
 }
 
+body {
+  font-family: 'Barlow Semi Condensed';
+}
+
+body, .game {
+  height: 100vh;
+}
+
+.rps {
+  display: grid;
+  grid-template-columns: minmax(1.2rem, 1fr) minmax(0, 600px) minmax(1.2rem, 1fr);
+  background: radial-gradient(var(--bg-1), var(--bg-2));
+}
+
+.rps > * {
+  grid-column: 2;
+}
+
+
+
 .attribution {
   font-size: 11px;
   text-align: center;

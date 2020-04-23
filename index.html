@@ -17,48 +17,50 @@
     />
   </head>
   <body>
-    <main class="game-wrapper">
-      <header class="game-header">
-        <img src="assets/img/logo.svg" alt="ROCK PAPER SCISSORS" />
-        <div id="score"></div>
+    <main class="rps">
+      <header class="rps__header">
+        <div class="rps__header__container">
+          <img class="rps__logo" src="assets/img/logo.svg" alt="ROCK PAPER SCISSORS" />
+          <div class="rps__score">12</div>
+        </div>
       </header>
-      <section class="game">
-        <div id="playable-hands">
+      <section class="rps__game">
+        <div id="rps__playableHands">
           <img
             class="hand rock"
             src="assets/img/icon-rock.svg"
             alt="Rock"
             title="Rock"
-            data-hand="Rock"
+            data-hand="rock"
           />
           <img
             class="hand paper"
             src="assets/img/icon-paper.svg"
             alt="Paper"
             title="Paper"
-            data-hand="Paper"
+            data-hand="paper"
           />
           <img
             class="hand scissors"
             src="assets/img/icon-scissors.svg"
             alt="Scissors"
             title="Scissors"
-            data-hand="Scissors"
+            data-hand="scissors"
           />
         </div>
-        <div id="played-hands">
-          <div id="player-hand" class="hand"></div>
-          <div id="house-hand" class="hand"></div>
+        <div class="rps__playedHands">
+          <div id="rps__playerHand" class="hand"></div>
+          <div id="rps__houseHand" class="hand"></div>
         </div>
-        <div id="round-result">
-          <p class="result-text"></p>
+        <div class="rps__result">
+          <p id="rps__result__text"></p>
           <a href="#" class="play-again button">
             PLAY AGAIN
           </a>
         </div>
       </section>
-      <a href="#" class="rules-button">RULES</a>
-      <section class="rules modal">
+      <a href="#" class="rps__rulesButton">RULES</a>
+      <section class="rps__rules modal">
         <img
           src="assets/img/image-rules.svg"
           alt="Rock beats scissors, scissors beats paper, and paper beats rock."
