@@ -22,8 +22,8 @@ body {
   font-family: 'Barlow Semi Condensed';
 }
 
-body, .game {
-  height: 100vh;
+body, .rps {
+  min-height: 100vh;
 }
 
 .rps {
@@ -36,7 +36,44 @@ body, .game {
   grid-column: 2;
 }
 
+.rps__header {
+  border: solid 2px var(--header-outline);
+  border-radius: 10px;
+  height: 130px;
+  grid-row: 1;
+}
 
+.rps__header__container {
+  padding: 1em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+
+.rps__logo {
+  height: 60px;
+  padding-left: 0.625em;
+}
+
+.rps__score {
+  font-size: 3em;
+  background-color: white;
+  border-radius: 5px;
+  color: var(--dark-text);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+}
+
+.rps__score::before {
+  content: "SCORE";
+  color: var(--score-text);
+  font-size: 0.875rem;
+}
 
 .attribution {
   font-size: 11px;
