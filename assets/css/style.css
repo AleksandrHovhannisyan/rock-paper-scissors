@@ -259,7 +259,7 @@ body,
 
 /* TODO: border radius of modal window on desktop */
 
-#modal-close-button {
+#close-modal-button {
   color: var(--dark-text);
   width: 2em;
   height: 2em;
@@ -270,8 +270,8 @@ body,
   cursor: pointer;
 }
 
-#modal-close-button::before,
-#modal-close-button::after {
+#close-modal-button::before,
+#close-modal-button::after {
   content: "";
   width: 100%;
   height: 5px;
@@ -280,16 +280,16 @@ body,
   transition: background-color 0.2s ease-in-out;
 }
 
-#modal-close-button:hover::before,
-#modal-close-button:hover::after {
+#close-modal-button:hover::before,
+#close-modal-button:hover::after {
   background-color: rgb(169, 169, 170);
 }
 
-#modal-close-button::before {
+#close-modal-button::before {
   transform: rotate(45deg);
 }
 
-#modal-close-button::after {
+#close-modal-button::after {
   transform: rotate(-45deg);
 }
 
