@@ -17,38 +17,38 @@
     />
   </head>
   <body>
-    <main class="rps">
-      <header class="rps__header">
-        <div class="rps__header__container">
-          <img class="rps__logo" src="assets/img/logo.svg" alt="ROCK PAPER SCISSORS" />
-          <div class="rps__score">12</div>
+    <main class="game-wrapper">
+      <header class="game-header">
+        <div class="padded-container">
+          <img class="logo" src="assets/img/logo.svg" alt="ROCK PAPER SCISSORS" />
+          <div class="score">12</div>
         </div>
       </header>
-      <section class="rps__game">
-        <div class="rps__playableHands hand-group hidden">
+      <section class="game">
+        <div class="playable-hands hand-group hidden">
           <div class="selectable hand paper" title="Paper" data-hand="paper"></div>
           <div class="selectable hand rock" title="Rock" data-hand="rock"></div>
           <div class="selectable hand scissors" title="Scissors" data-hand="scissors"></div>
         </div>
-        <div class="rps__playedHands hand-group">
-          <div class="played-hand" id="rps__playerHand">
+        <div class="played-hands hand-group">
+          <div class="played-hand" id="player-hand">
             <!-- TODO: add winning-hand class -->
             <div class="hand rock"></div>
-            <p class="rps__pickedText">YOU PICKED</p>
+            <p class="picked-text">YOU PICKED</p>
           </div>
-          <div class="played-hand" id="rps__houseHand">
+          <div class="played-hand" id="house-hand">
             <div class="hand scissors"></div>
-            <p class="rps__pickedText">THE HOUSE PICKED</p>
+            <p class="picked-text">THE HOUSE PICKED</p>
           </div>
         </div>
-        <div class="rps__result centered">
-          <p class="rps__result__text">YOU <span id="result">WIN</span></p>
-          <a href="#" id="rps_playAgain">PLAY AGAIN</a>
+        <div class="result centered">
+          <p class="result-text">YOU <span id="result">WIN</span></p>
+          <a href="#" id="play-again">PLAY AGAIN</a>
         </div>
       </section>
-      <section class="rps__rules centered">
-        <a href="#" id="rps__rules__button">RULES</a>
-        <div class="rps__rules__modal hidden">
+      <section class="rules centered">
+        <a href="#" id="rules-button">RULES</a>
+        <div class="modal hidden">
           <img
             src="assets/img/image-rules.svg"
             alt="Rock beats scissors, scissors beats paper, and paper beats rock."

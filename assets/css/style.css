@@ -23,11 +23,12 @@ body {
   background: radial-gradient(var(--bg-1), var(--bg-2));
 }
 
-body, .rps {
+body, 
+.game-wrapper {
   min-height: 100vh;
 }
 
-.rps {
+.game-wrapper {
   max-width: 590px;
   margin: 0 auto;
   padding: 1.2rem;
@@ -36,14 +37,14 @@ body, .rps {
   grid-template-rows: max-content max-content 100px;
 }
 
-.rps__header {
+.game-header {
   border: solid 5px var(--header-outline);
   border-radius: 10px;
   height: 130px;
   grid-row: 1;
 }
 
-.rps__header__container {
+.padded-container {
   padding: 1em;
   display: flex;
   justify-content: space-between;
@@ -51,12 +52,12 @@ body, .rps {
   height: 100%;
 }
 
-.rps__logo {
+.logo {
   height: 60px;
   padding-left: 0.625em;
 }
 
-.rps__score {
+.score {
   font-size: 3em;
   background-color: white;
   border-radius: 5px;
@@ -70,13 +71,13 @@ body, .rps {
   letter-spacing: 1px;
 }
 
-.rps__score::before {
+.score::before {
   content: "SCORE";
   color: var(--score-text);
   font-size: 0.875rem;
 }
 
-.rps__game {
+.game {
   grid-row: 2;
 }
 
@@ -87,7 +88,7 @@ body, .rps {
   align-items: center;
 }
 
-.rps__playableHands {
+.playable-hands {
   background: url("../img/bg-triangle.svg");
   background-repeat: no-repeat;
   background-position: center;
@@ -106,16 +107,16 @@ body, .rps {
   height: 140px;
 }
 
-.rps__playableHands .hand:nth-child(1) {
+.playable-hands .hand:nth-child(1) {
   top: -80px;
   left: 50px;
 }
 
-.rps__playableHands .hand:nth-child(2) {
+.playable-hands .hand:nth-child(2) {
   top: 80px;
 }
 
-.rps__playableHands .hand:nth-child(3) {
+.playable-hands .hand:nth-child(3) {
   top: -80px;
   right: 50px;
 }
@@ -144,7 +145,7 @@ body, .rps {
   content: url("../img/icon-scissors.svg");
 }
 
-.rps__playedHands {
+.played-hands {
   justify-content: space-between;
 }
 
@@ -156,23 +157,23 @@ body, .rps {
   flex-direction: column;
 }
 
-.rps__pickedText {
+.picked-text {
   color: white;
   text-align: center;
   margin-top: 1em;
 }
 
-.rps__result {
+.result {
   margin-top: 80px;
 }
 
-.rps__result__text {
+.result-text {
   color: white;
   font-size: 3em;
   margin-bottom: 0.4em;
 }
 
-#rps_playAgain {
+#play-again {
   width: 200px;
   height: 50px;
   color: var(--dark-text);
@@ -186,13 +187,13 @@ body, .rps {
   margin-bottom: 40px;
 }
 
-.rps__rules {
+.rules {
   height: 100px;
   grid-row: 3;
   letter-spacing: 0.1em;
 }
 
-#rps__rules__button {
+#rules-button {
   border: solid 2px var(--header-outline);
   border-radius: 10px;
   width: 160px;
