@@ -20,47 +20,30 @@
     <main class="rps">
       <header class="rps__header">
         <div class="rps__header__container">
-          <img
-            class="rps__logo"
-            src="assets/img/logo.svg"
-            alt="ROCK PAPER SCISSORS"
-          />
+          <img class="rps__logo" src="assets/img/logo.svg" alt="ROCK PAPER SCISSORS" />
           <div class="rps__score">12</div>
         </div>
       </header>
       <section class="rps__game">
-        <div class="rps__playableHands">
-          <img
-            class="selectable hand paper"
-            src="assets/img/icon-paper.svg"
-            alt="Paper"
-            title="Paper"
-            data-hand="paper"
-          />
-          <img
-            class="selectable hand rock"
-            src="assets/img/icon-rock.svg"
-            alt="Rock"
-            title="Rock"
-            data-hand="rock"
-          />
-          <img
-            class="selectable hand scissors"
-            src="assets/img/icon-scissors.svg"
-            alt="Scissors"
-            title="Scissors"
-            data-hand="scissors"
-          />
+        <div class="rps__playableHands hand-group hidden">
+          <div class="selectable hand paper" title="Paper" data-hand="paper"></div>
+          <div class="selectable hand rock" title="Rock" data-hand="rock"></div>
+          <div class="selectable hand scissors" title="Scissors" data-hand="scissors"></div>
         </div>
-        <div class="rps__playedHands hidden">
-          <div id="rps__playerHand" class="hand"></div>
-          <div id="rps__houseHand" class="hand"></div>
+        <div class="rps__playedHands hand-group">
+          <div class="played-hand" id="rps__playerHand">
+            <!-- TODO: add winning-hand class -->
+            <div class="hand rock"></div>
+            <p class="rps__pickedText">YOU PICKED</p>
+          </div>
+          <div class="played-hand" id="rps__houseHand">
+            <div class="hand scissors"></div>
+            <p class="rps__pickedText">THE HOUSE PICKED</p>
+          </div>
         </div>
-        <div class="rps__result hidden">
-          <p id="rps__result__text"></p>
-          <a href="#" class="play-again button">
-            PLAY AGAIN
-          </a>
+        <div class="rps__result centered">
+          <p class="rps__result__text">YOU <span id="result">WIN</span></p>
+          <a href="#" id="rps_playAgain">PLAY AGAIN</a>
         </div>
       </section>
       <section class="rps__rules centered">

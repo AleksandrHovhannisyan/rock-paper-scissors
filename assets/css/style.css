@@ -67,6 +67,7 @@ body, .rps {
   justify-content: center;
   align-items: center;
   width: 100px;
+  letter-spacing: 1px;
 }
 
 .rps__score::before {
@@ -76,8 +77,14 @@ body, .rps {
 }
 
 .rps__game {
-  height: 70vh;
   grid-row: 2;
+}
+
+.hand-group {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
 }
 
 .rps__playableHands {
@@ -85,11 +92,7 @@ body, .rps {
   background-repeat: no-repeat;
   background-position: center;
   background-size: 200px;
-  width: 100%;
-  height: 100%;
-  display: flex;
   justify-content: center;
-  align-items: center;
 }
 
 .hand {
@@ -99,28 +102,94 @@ body, .rps {
   border-radius: 50%;
   border-style: solid;
   border-width: 15px;
+  width: 140px;
+  height: 140px;
+}
+
+.rps__playableHands .hand:nth-child(1) {
+  top: -80px;
+  left: 50px;
+}
+
+.rps__playableHands .hand:nth-child(2) {
+  top: 80px;
+}
+
+.rps__playableHands .hand:nth-child(3) {
+  top: -80px;
+  right: 50px;
 }
 
 .paper {
-  top: -80px;
-  left: 50px;
   border-color: var(--paper-light);
 }
 
+.paper::after {
+  content: url("../img/icon-paper.svg");
+}
+
 .rock {
-  top: 80px;
   border-color: var(--rock-light);
 }
 
+.rock::after {
+  content: url("../img/icon-rock.svg");
+}
+
 .scissors {
-  top: -80px;
-  right: 50px;
   border-color: var(--scissors-light);
+}
+
+.scissors::after {
+  content: url("../img/icon-scissors.svg");
+}
+
+.rps__playedHands {
+  justify-content: space-between;
+}
+
+.played-hand {
+  position: relative;
+  margin-top: 80px;
+  display: flex;
+  /* changes to column-reverse on desktop */
+  flex-direction: column;
+}
+
+.rps__pickedText {
+  color: white;
+  text-align: center;
+  margin-top: 1em;
+}
+
+.rps__result {
+  margin-top: 80px;
+}
+
+.rps__result__text {
+  color: white;
+  font-size: 3em;
+  margin-bottom: 0.4em;
+}
+
+#rps_playAgain {
+  width: 200px;
+  height: 50px;
+  color: var(--dark-text);
+  background-color: white;
+  border-radius: 5px;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  letter-spacing: 0.1em;
+  margin-bottom: 40px;
 }
 
 .rps__rules {
   height: 100px;
   grid-row: 3;
+  letter-spacing: 0.1em;
 }
 
 #rps__rules__button {
