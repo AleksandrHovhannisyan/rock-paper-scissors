@@ -55,7 +55,7 @@ body,
   padding-left: 0.625em;
 }
 
-.score {
+#score {
   font-size: 3em;
   padding: 0.5rem;
   background-color: white;
@@ -69,7 +69,7 @@ body,
   letter-spacing: 1px;
 }
 
-.score::before {
+#score::before {
   content: "SCORE";
   color: var(--score-text);
   font-size: 0.875rem;
@@ -81,7 +81,7 @@ body,
   height: 100%;
 }
 
-.playable-hands {
+.selectable-hands {
   background: url("../img/bg-triangle.svg");
   background-repeat: no-repeat;
   background-position: center;
@@ -90,6 +90,10 @@ body,
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.selectable-hands .hand {
+  cursor: pointer;
 }
 
 .hand {
@@ -102,6 +106,7 @@ body,
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: all 0.4s ease;
 }
 
 .hand:not(.placeholder) {
@@ -113,16 +118,16 @@ body,
   background-color: var(--bg-2);
 }
 
-.playable-hands .hand:nth-child(1) {
+.selectable-hands .hand:nth-child(1) {
   top: -80px;
   left: 50px;
 }
 
-.playable-hands .hand:nth-child(2) {
+.selectable-hands .hand:nth-child(2) {
   top: 80px;
 }
 
-.playable-hands .hand:nth-child(3) {
+.selectable-hands .hand:nth-child(3) {
   top: -80px;
   right: 50px;
 }
@@ -165,6 +170,10 @@ body,
   display: flex;
 }
 
+.winning-hand {
+  /* TODO: figure this out... */
+}
+
 .picked-text {
   color: white;
   text-align: center;
@@ -175,7 +184,7 @@ body,
   margin-top: 80px;
 }
 
-.result-text {
+#result-text {
   color: white;
   font-size: 3em;
   margin-bottom: 0.4em;
@@ -297,10 +306,6 @@ body,
   display: none !important;
 }
 
-.selectable {
-  cursor: pointer;
-}
-
 .centered {
   display: flex;
   flex-direction: column;
@@ -309,10 +314,11 @@ body,
 }
 
 .attribution {
+  color: white;
   font-size: 11px;
   text-align: center;
 }
 
 .attribution a {
-  color: hsl(228, 45%, 44%);
+  color: hsl(189, 59%, 53%);
 }

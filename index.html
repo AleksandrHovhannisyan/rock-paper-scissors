@@ -21,19 +21,18 @@
       <header class="game-header">
         <div class="padded-container">
           <img class="logo" src="assets/img/logo.svg" alt="ROCK PAPER SCISSORS" />
-          <div class="score">12</div>
+          <div id="score">0</div>
         </div>
       </header>
       <section class="game">
-        <div class="playable-hands">
-          <div class="selectable hand paper" title="Paper" data-hand="paper"></div>
-          <div class="selectable hand rock" title="Rock" data-hand="rock"></div>
-          <div class="selectable hand scissors" title="Scissors" data-hand="scissors"></div>
+        <div class="selectable-hands">
+          <div class="hand paper" title="Paper" data-hand="paper"></div>
+          <div class="hand rock" title="Rock" data-hand="rock"></div>
+          <div class="hand scissors" title="Scissors" data-hand="scissors"></div>
         </div>
         <div class="played-hands hidden">
           <div class="played-hand" id="player-hand">
-            <!-- TODO: add winning-hand class -->
-            <div class="hand rock"></div>
+            <div class="hand placeholder"></div>
             <p class="picked-text">YOU PICKED</p>
           </div>
           <div class="played-hand" id="house-hand">
@@ -42,7 +41,7 @@
           </div>
         </div>
         <div class="result centered hidden">
-          <p class="result-text">YOU <span id="result">WIN</span></p>
+          <p id="result-text">YOU WIN</p>
           <a href="#" id="play-again">PLAY AGAIN</a>
         </div>
       </section>
