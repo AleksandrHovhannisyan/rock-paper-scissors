@@ -49,14 +49,14 @@ const handBeatenBy = {
 
 function getResult(playerHand, houseHand) {
   if (playerHand === houseHand) {
-    return { scoreChange: 0, feedback: 'TIE GAME' };
+    return { scoreChange: 0, winner: null, feedback: 'TIE GAME' };
   }
 
   if (handBeatenBy[playerHand] === houseHand) {
-    return { scoreChange: 1, feedback: 'YOU WIN' };
+    return { scoreChange: 1, winner: 'house-hand', feedback: 'YOU WIN' };
   }
 
-  return { scoreChange: -1, feedback: 'YOU LOSE' };
+  return { scoreChange: -1, winner: 'house-hand', feedback: 'YOU LOSE' };
 }
 
 function onHandClicked(hand) {
@@ -95,16 +95,8 @@ function evaluateRoundResult(playerHand, houseHand) {
     changeScoreBy(result.scoreChange);
 
     // Anything but a tie
-    if (result.scoreChange) {
-      let winner;
-
-      if (result.scoreChange === 1) {
-        winner = 'player-hand';
-      } else {
-        winner = 'house-hand';
-      }
-
-      highlightWinningHand(winner);
+    if (result.winner) {
+      highlightWinningHand(result.winner);
     }
   }, 1500);
 }
