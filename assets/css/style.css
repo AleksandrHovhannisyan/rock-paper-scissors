@@ -211,12 +211,14 @@ body,
   align-items: center;
   letter-spacing: 0.1em;
   margin-bottom: 40px;
-  transition: background-color var(--transition-duration) ease;
+  transition: all var(--transition-duration) ease;
+  border: solid 2px white;
 }
 
 #play-again:focus,
 #play-again:hover {
-  background-color: hsl(189, 100%, 87%);
+  background-color: transparent;
+  color: white;
 }
 
 .rules {
