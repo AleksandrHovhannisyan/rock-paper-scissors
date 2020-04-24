@@ -34,13 +34,12 @@ body,
   padding: 1.2rem;
   display: grid;
   grid-template-columns: minmax(0, 1fr);
-  grid-template-rows: max-content max-content 100px;
+  grid-template-rows: max-content 1fr 100px;
 }
 
 .game-header {
   border: solid 5px var(--header-outline);
   border-radius: 10px;
-  height: 130px;
   grid-row: 1;
 }
 
@@ -49,7 +48,6 @@ body,
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 100%;
 }
 
 .logo {
@@ -59,15 +57,15 @@ body,
 
 .score {
   font-size: 3em;
+  padding: 0.5rem;
   background-color: white;
   border-radius: 5px;
   color: var(--dark-text);
-  height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 100px;
+  width: 80px;
   letter-spacing: 1px;
 }
 
@@ -79,13 +77,8 @@ body,
 
 .game {
   grid-row: 2;
-}
-
-.hand-group {
-  width: 100%;
+  min-height: 400px;
   height: 100%;
-  display: flex;
-  align-items: center;
 }
 
 .playable-hands {
@@ -93,6 +86,9 @@ body,
   background-repeat: no-repeat;
   background-position: center;
   background-size: 200px;
+  height: 100%;
+  display: flex;
+  align-items: center;
   justify-content: center;
 }
 
@@ -101,10 +97,20 @@ body,
   padding: 30px;
   background-color: white;
   border-radius: 50%;
-  border-style: solid;
-  border-width: 15px;
   width: 140px;
   height: 140px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hand:not(.placeholder) {
+  border-style: solid;
+  border-width: 15px;
+}
+
+.hand.placeholder {
+  background-color: var(--bg-2);
 }
 
 .playable-hands .hand:nth-child(1) {
@@ -146,6 +152,7 @@ body,
 }
 
 .played-hands {
+  display: flex;
   justify-content: space-between;
 }
 
@@ -155,6 +162,7 @@ body,
   display: flex;
   /* changes to column-reverse on desktop */
   flex-direction: column;
+  display: flex;
 }
 
 .picked-text {
@@ -190,7 +198,6 @@ body,
 .rules {
   height: 100px;
   grid-row: 3;
-  letter-spacing: 0.1em;
 }
 
 #rules-button {
@@ -203,10 +210,91 @@ body,
   align-items: center;
   text-decoration: none;
   color: white;
+  letter-spacing: 0.1em;
+}
+
+.rules-text {
+  color: var(--dark-text);
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.modal-wrapper {
+  position: fixed;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  top: 0;
+  transition: all 0.2s ease-in-out;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.modal-window {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  background: white;
+  padding: 1.25em;
+  transform: scale(0);
+  transition: 0.2s ease-in-out all;
+  transform: scale(0);
+}
+
+.modal-wrapper.opened {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-wrapper.opened .modal-window {
+  transform: scale(1);
+}
+
+/* TODO: border radius of modal window on desktop */
+
+#modal-close-button {
+  color: var(--dark-text);
+  width: 2em;
+  height: 2em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  cursor: pointer;
+}
+
+#modal-close-button::before,
+#modal-close-button::after {
+  content: "";
+  width: 100%;
+  height: 5px;
+  position: absolute;
+  background-color: #CDCDD0;
+  transition: background-color 0.2s ease-in-out;
+}
+
+#modal-close-button:hover::before,
+#modal-close-button:hover::after {
+  background-color: rgb(169, 169, 170);
+}
+
+#modal-close-button::before {
+  transform: rotate(45deg);
+}
+
+#modal-close-button::after {
+  transform: rotate(-45deg);
 }
 
 .hidden {
-  display: none;
+  display: none !important;
 }
 
 .selectable {

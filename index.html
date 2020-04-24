@@ -25,34 +25,38 @@
         </div>
       </header>
       <section class="game">
-        <div class="playable-hands hand-group hidden">
+        <div class="playable-hands">
           <div class="selectable hand paper" title="Paper" data-hand="paper"></div>
           <div class="selectable hand rock" title="Rock" data-hand="rock"></div>
           <div class="selectable hand scissors" title="Scissors" data-hand="scissors"></div>
         </div>
-        <div class="played-hands hand-group">
+        <div class="played-hands hidden">
           <div class="played-hand" id="player-hand">
             <!-- TODO: add winning-hand class -->
             <div class="hand rock"></div>
             <p class="picked-text">YOU PICKED</p>
           </div>
           <div class="played-hand" id="house-hand">
-            <div class="hand scissors"></div>
+            <div class="hand placeholder"></div>
             <p class="picked-text">THE HOUSE PICKED</p>
           </div>
         </div>
-        <div class="result centered">
+        <div class="result centered hidden">
           <p class="result-text">YOU <span id="result">WIN</span></p>
           <a href="#" id="play-again">PLAY AGAIN</a>
         </div>
       </section>
       <section class="rules centered">
         <a href="#" id="rules-button">RULES</a>
-        <div class="modal hidden">
-          <img
-            src="assets/img/image-rules.svg"
-            alt="Rock beats scissors, scissors beats paper, and paper beats rock."
-          />
+        <div class="modal-wrapper closed">
+          <div class="modal-window">
+            <p class="rules-text">RULES</p>
+            <img
+              src="assets/img/image-rules.svg"
+              alt="Rock beats scissors, scissors beats paper, and paper beats rock."
+            />
+            <div id="modal-close-button"></div>
+          </div>
         </div>
       </section>
       <div class="attribution">
