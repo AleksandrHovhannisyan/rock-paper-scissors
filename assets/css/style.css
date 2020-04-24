@@ -11,6 +11,7 @@
   --bg-1: hsl(214, 47%, 23%);
   --bg-2: hsl(237, 49%, 15%);
   --inset-hand-shadow: 0 3px 4px inset #8d90a0;
+  --transition-duration: 0.2s;
 }
 
 * {
@@ -209,6 +210,12 @@ body,
   align-items: center;
   letter-spacing: 0.1em;
   margin-bottom: 40px;
+  transition: background-color var(--transition-duration) ease;
+}
+
+#play-again:focus,
+#play-again:hover {
+  background-color: hsl(189, 100%, 87%);
 }
 
 .rules {
@@ -217,7 +224,7 @@ body,
 }
 
 #rules-button {
-  border: solid 2px var(--header-outline);
+  border: solid 2px #888FA9;
   border-radius: 10px;
   width: 160px;
   height: 50px;
@@ -227,6 +234,12 @@ body,
   text-decoration: none;
   color: white;
   letter-spacing: 0.1em;
+  transition: border-color var(--transition-duration) ease;
+}
+
+#rules-button:focus,
+#rules-button:hover {
+  border-color: white;
 }
 
 .rules-text {
@@ -245,7 +258,7 @@ body,
   align-items: center;
   background-color: rgba(0, 0, 0, 0.5);
   top: 0;
-  transition: all 0.2s ease-in-out;
+  transition: all var(--transition-duration) ease-in-out;
   opacity: 0;
   visibility: hidden;
 }
@@ -260,7 +273,7 @@ body,
   background: white;
   padding: 1.25em;
   transform: scale(0);
-  transition: 0.2s ease-in-out all;
+  transition: var(--transition-duration) ease-in-out all;
   transform: scale(0);
 }
 
@@ -293,7 +306,7 @@ body,
   height: 5px;
   position: absolute;
   background-color: #CDCDD0;
-  transition: background-color 0.2s ease-in-out;
+  transition: background-color var(--transition-duration) ease-in-out;
 }
 
 #close-modal-button:hover::before,

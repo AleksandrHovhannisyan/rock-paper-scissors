@@ -1,7 +1,17 @@
 const selectableHandsContainer = document.querySelector('.selectable-hands');
 const selectableHands = selectableHandsContainer.querySelectorAll('.hand');
-selectableHands.forEach((hand) => hand.addEventListener('click', onHandClicked));
 const handNames = Array.from(selectableHands).map((hand) => hand.getAttribute('data-hand'));
+
+selectableHands.forEach((hand) => {
+  hand.addEventListener('click', (clickEvent) => {
+    onHandClicked(clickEvent.target);
+  });
+  hand.addEventListener('keyup', (keyEvent) => {
+    if (keyEvent.key === 'Enter') {
+      onHandClicked(keyEvent.target);
+    }
+  });
+});
 
 const playedHandsContainer = document.querySelector('.played-hands');
 const playerHandElement = document.querySelector('#player-hand');
@@ -49,9 +59,8 @@ function getResult(playerHand, houseHand) {
   return { scoreChange: -1, feedback: 'YOU LOSE' };
 }
 
-function onHandClicked(clickEvent) {
-  const clickedHand = clickEvent.target;
-  const playerHand = clickedHand.getAttribute('data-hand');
+function onHandClicked(hand) {
+  const playerHand = hand.getAttribute('data-hand');
   const houseHand = pickRandomHouseHand();
   evaluateRoundResult(playerHand, houseHand);
 }
