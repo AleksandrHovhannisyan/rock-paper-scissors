@@ -1,15 +1,16 @@
 :root {
   --paper-light: hsl(230, 89%, 65%);
-  --paper-dark: hsl(230, 89%, 62%);
+  --paper-dark: hsl(230, 54%, 44%);
   --scissors-light: hsl(40, 84%, 53%);
-  --scissors-dark: hsl(39, 89%, 49%);
+  --scissors-dark: hsl(39, 81%, 39%);
   --rock-light: hsl(349, 70%, 56%);
-  --rock-dark: hsl(349, 71%, 52%);
+  --rock-dark: hsl(349, 64%, 37%);
   --dark-text: hsl(229, 25%, 31%);
   --score-text: hsl(229, 64%, 46%);
   --header-outline: hsl(217, 16%, 45%);
   --bg-1: hsl(214, 47%, 23%);
   --bg-2: hsl(237, 49%, 15%);
+  --inset-hand-shadow: 0 3px 4px inset #8d90a0;
 }
 
 * {
@@ -134,6 +135,8 @@ body,
 
 .paper {
   border-color: var(--paper-light);
+  box-shadow: var(--inset-hand-shadow),
+              0 4px 0 2px var(--paper-dark);
 }
 
 .paper::after {
@@ -142,6 +145,8 @@ body,
 
 .rock {
   border-color: var(--rock-light);
+  box-shadow: var(--inset-hand-shadow),
+              0 4px 0 2px var(--rock-dark);
 }
 
 .rock::after {
@@ -150,6 +155,8 @@ body,
 
 .scissors {
   border-color: var(--scissors-light);
+  box-shadow: var(--inset-hand-shadow),
+              0 4px 0 2px var(--scissors-dark);
 }
 
 .scissors::after {
