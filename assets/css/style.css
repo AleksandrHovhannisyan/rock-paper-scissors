@@ -416,6 +416,7 @@ body,
     height: 25rem;
     border-radius: 5px;
     position: relative;
+    box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
   }
 
   .rules-heading,
