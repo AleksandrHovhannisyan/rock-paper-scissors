@@ -1,3 +1,20 @@
+/**
+ * Utility function for subscribing to click and keyup events at once.
+ * @param element - The element for which mouse and keyboard clicks should be registered.
+ * @param handler - The event handler that should be called if a user clicks with their mouse or keyboard.
+ */
+function subscribeToA11yClick(element, handler) {
+  element.addEventListener('click', (clickEvent) => {
+    handler(clickEvent);
+  });
+
+  element.addEventListener('keyup', (keyEvent) => {
+    if (keyEvent.key === 'Enter') {
+      handler(keyEvent);
+    }
+  });
+}
+
 const selectableHandsContainer = document.querySelector('.selectable-hands');
 const selectableHands = selectableHandsContainer.querySelectorAll('.hand');
 const handNames = Array.from(selectableHands).map((hand) => hand.getAttribute('data-hand'));
@@ -21,8 +38,9 @@ const housePickedText = document.querySelector('#house-hand + .picked-text');
 
 const resultElement = document.querySelector('.result');
 const resultText = document.getElementById('result-text');
+
 const playAgainButton = document.getElementById('play-again');
-playAgainButton.addEventListener('click', startNewRound);
+subscribeToA11yClick(playAgainButton, startNewRound);
 
 function startNewRound() {
   toggleVisibilityOf(selectableHandsContainer);
@@ -133,10 +151,5 @@ rulesModalWrapper.addEventListener('click', () => {
   closeRulesModal();
 });
 
-rulesButton.addEventListener('click', () => {
-  openRulesModal();
-});
-
-closeModalButton.addEventListener('click', () => {
-  closeRulesModal();
-});
+subscribeToA11yClick(rulesButton, openRulesModal);
+subscribeToA11yClick(closeModalButton, closeRulesModal);
