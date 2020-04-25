@@ -15,7 +15,9 @@ selectableHands.forEach((hand) => {
 
 const playedHandsContainer = document.querySelector('.played-hands');
 const playerHandElement = document.querySelector('#player-hand');
+const playerPickedText = document.querySelector('#player-hand + .picked-text');
 const houseHandElement = document.querySelector('#house-hand');
+const housePickedText = document.querySelector('#house-hand + .picked-text');
 
 const resultElement = document.querySelector('.result');
 const resultText = document.getElementById('result-text');
@@ -67,10 +69,12 @@ function onHandClicked(hand) {
 
 function showPlayerHand(playerHand) {
   playerHandElement.className = `hand ${playerHand}`;
+  playerPickedText.setAttribute('aria-label', `You picked ${playerHand}`);
 }
 
 function showHouseHand(houseHand) {
   houseHandElement.className = `hand ${houseHand}`;
+  housePickedText.setAttribute('aria-label', `The house picked ${houseHand}`);
 }
 
 const scoreElement = document.getElementById('score');
