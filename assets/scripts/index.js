@@ -105,17 +105,33 @@ function evaluateRoundResult(playerHand, houseHand) {
   }, 1500);
 }
 
-const rulesModal = document.querySelector('.rules .modal-wrapper');
+const rulesModalWrapper = document.querySelector('.rules .modal-wrapper');
+const rulesModalWindow = rulesModalWrapper.querySelector('.modal-window');
 const closeModalButton = document.querySelector('#close-modal-button');
 const rulesButton = document.getElementById('rules-button');
 
 function openRulesModal() {
-  rulesModal.classList.add('opened');
+  rulesModalWrapper.classList.add('opened');
 }
 
 function closeRulesModal() {
-  rulesModal.classList.remove('opened');
+  rulesModalWrapper.classList.remove('opened');
 }
+
+document.addEventListener('keyup', (keyEvent) => {
+  if (keyEvent.key === 'Escape') {
+    // doesn't matter if it's not open because the classlist just won't remove anything
+    closeRulesModal();
+  }
+});
+
+rulesModalWindow.addEventListener('click', (clickEvent) => {
+  clickEvent.stopPropagation();
+});
+
+rulesModalWrapper.addEventListener('click', () => {
+  closeRulesModal();
+});
 
 rulesButton.addEventListener('click', () => {
   openRulesModal();
