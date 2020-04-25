@@ -53,7 +53,7 @@ function getResult(playerHand, houseHand) {
   }
 
   if (handBeatenBy[playerHand] === houseHand) {
-    return { scoreChange: 1, winner: 'house-hand', feedback: 'YOU WIN' };
+    return { scoreChange: 1, winner: 'player-hand', feedback: 'YOU WIN' };
   }
 
   return { scoreChange: -1, winner: 'house-hand', feedback: 'YOU LOSE' };
