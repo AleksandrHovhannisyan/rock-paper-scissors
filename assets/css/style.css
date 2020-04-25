@@ -165,9 +165,9 @@ body,
 }
 
 .played-hands {
-  display: flex;
-  justify-content: space-between;
-  padding: 0 0.5em;
+  display: grid;
+  grid-template-areas: "player house"
+                       "result result";
 }
 
 .played-hand {
@@ -177,6 +177,14 @@ body,
   /* changes to column-reverse on desktop */
   flex-direction: column;
   display: flex;
+}
+
+#player-hand {
+  grid-area: player;
+}
+
+#house-hand {
+  grid-area: house;
 }
 
 .winning-hand {
@@ -190,6 +198,7 @@ body,
 }
 
 .result {
+  grid-area: result;
   margin-top: 80px;
 }
 
@@ -368,8 +377,15 @@ body,
     min-width: 500;
   }
 
+  .played-hands {
+    grid-template-areas: "player result house";
+  }
+
   .played-hand {
     flex-direction: column-reverse;
+    align-items: center;
+    margin-left: 50px;
+    margin-right: 50px;
   }
 
   .played-hand .hand {
@@ -379,7 +395,7 @@ body,
 
   .picked-text {
     margin-top: 0;
-    margin-bottom: 1em;
+    margin-bottom: 60px;
   }
 
   .rules {
