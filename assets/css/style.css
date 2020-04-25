@@ -371,6 +371,10 @@ body,
   color: hsl(189, 59%, 53%);
 }
 
+.button {
+  cursor: pointer;
+}
+
 @media screen and (min-width: 1366px) {
 
   .game-wrapper {
