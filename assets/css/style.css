@@ -245,7 +245,7 @@ body,
   border-color: white;
 }
 
-.rules-text {
+.rules-heading {
   color: var(--dark-text);
   font-size: 2em;
   font-weight: bold;
@@ -344,4 +344,49 @@ body,
 
 .attribution a {
   color: hsl(189, 59%, 53%);
+}
+
+@media screen and (min-width: 1366px) {
+
+  .game-wrapper {
+    max-width: none;
+    margin: 0;
+    padding: 1.2rem 2rem;
+  }
+
+  .game-header {
+    max-width: 590px;
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .rules {
+    align-items: flex-end;
+    font-size: 0.75rem;
+  }
+
+  .modal-window {
+    width: 25rem;
+    height: 25rem;
+    border-radius: 5px;
+    position: relative;
+  }
+
+  .rules-heading,
+  #close-modal-button {
+    position: absolute;
+    top: 1.25rem;
+  }
+
+  .rules-heading {
+    left: 1.25rem;;
+  }
+
+  .rules-img {
+    margin-top: 3rem;
+  }
+
+  #close-modal-button {
+    right: 1.25rem;
+  }
 }
