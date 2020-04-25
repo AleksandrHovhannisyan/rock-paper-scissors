@@ -195,17 +195,21 @@ body,
 }
 
 .winning-hand {
-  /* TODO: figure this out... */
+  box-shadow: 0 0 0 40px #364462, 
+              0 0 0 80px #2d3b56, 
+              0 0 0 120px #27344e;
 }
 
 .picked-text {
   color: white;
   text-align: center;
+  z-index: 2;
 }
 
 .result {
   grid-area: result;
   margin-bottom: 2rem;
+  z-index: 2;
 }
 
 #result-text {
@@ -243,8 +247,8 @@ body,
 #rules-button {
   border: solid 2px #888FA9;
   border-radius: 10px;
-  width: 160px;
-  height: 50px;
+  width: 10rem;
+  height: 3.125rem;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -279,6 +283,7 @@ body,
   transition: all var(--transition-duration) ease-in-out;
   opacity: 0;
   visibility: hidden;
+  z-index: 1000;
 }
 
 .modal-window {
@@ -408,7 +413,6 @@ body,
 
   .rules {
     align-items: flex-end;
-    font-size: 0.75rem;
   }
 
   .modal-window {
