@@ -1,6 +1,8 @@
 # Frontend Mentor - Rock, Paper, Scissors
 
-![Design preview for the Rock, Paper, Scissors coding challenge](./design/desktop-preview.jpg)
+**Live solution available at**: https://rock-paper-scissors.aleksandrhovhannisyan.now.sh/
+
+![Design preview for the Rock, Paper, Scissors coding challenge](assets/design/desktop-preview.jpg)
 
 ## Welcome! 👋
 
