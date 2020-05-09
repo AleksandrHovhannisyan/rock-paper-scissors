@@ -53,6 +53,12 @@ body,
   align-items: center;
 }
 
+.home-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .logo {
   height: 3.75em;
   padding-left: 0.625em;
@@ -103,6 +109,7 @@ body,
   position: relative;
   padding: 30px;
   background-color: white;
+  border: none;
   border-radius: 50%;
   width: 140px;
   height: 140px;
@@ -314,8 +321,6 @@ body,
   transform: scale(1);
 }
 
-/* TODO: border radius of modal window on desktop */
-
 #close-modal-button {
   color: var(--dark-text);
   width: 2em;
@@ -338,7 +343,9 @@ body,
 }
 
 #close-modal-button:hover::before,
-#close-modal-button:hover::after {
+#close-modal-button:focus::before,
+#close-modal-button:hover::after,
+#close-modal-button:focus::after {
   background-color: rgb(169, 169, 170);
 }
 
@@ -372,7 +379,10 @@ body,
 }
 
 .button {
+  border: unset;
+  background: transparent;
   cursor: pointer;
+  font: unset;
 }
 
 @media screen and (min-width: 1366px) {

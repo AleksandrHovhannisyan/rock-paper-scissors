@@ -20,33 +20,35 @@
     <main class="game-wrapper">
       <header class="game-header">
         <div class="padded-container">
-          <img class="logo" src="assets/img/logo.svg" alt="ROCK PAPER SCISSORS" />
+          <a href="/" class="home-link" title="Rock, Paper, Scissors">
+            <img class="logo" src="assets/img/logo.svg" alt="ROCK PAPER SCISSORS" />
+          </a>
           <div id="score" aria-label="Current score">0</div>
         </div>
       </header>
       <section class="game">
         <div class="selectable-hands">
-          <div class="hand paper" title="Paper" aria-label="Paper" tabindex="0" data-hand="paper"></div>
-          <div class="hand rock" title="Rock" aria-label="Rock" tabindex="0" data-hand="rock"></div>
-          <div class="hand scissors" title="Scissors" aria-label="Scissors" tabindex="0" data-hand="scissors"></div>
+          <button class="hand paper" aria-label="Paper" data-hand="paper"></button>
+          <button class="hand rock" aria-label="Rock" data-hand="rock"></button>
+          <button class="hand scissors" aria-label="Scissors" data-hand="scissors"></button>
         </div>
         <div class="played-hands hidden">
           <div class="played-hand">
-            <div class="hand placeholder" id="player-hand"></div>
+            <button class="hand placeholder" id="player-hand" tabindex="-1"></button>
             <p class="picked-text">YOU PICKED</p>
           </div>
           <div class="played-hand">
-            <div class="hand placeholder" id="house-hand"></div>
+            <button class="hand placeholder" id="house-hand" tabindex="-1"></button>
             <p class="picked-text">THE HOUSE PICKED</p>
           </div>
           <div class="result centered hidden">
             <p id="result-text">YOU WIN</p>
-            <div id="play-again" class="button" tabindex="0">PLAY AGAIN</div>
+            <button id="play-again" class="button">PLAY AGAIN</button>
           </div>
         </div>
       </section>
       <section class="rules centered">
-        <div id="rules-button" class="button" tabindex="0">RULES</div>
+        <button id="rules-button" aria-label="View the rules for Rock, Paper, Scissors" class="button">RULES</button>
         <div class="modal-wrapper closed">
           <div class="modal-window">
             <p class="rules-heading">RULES</p>
@@ -55,7 +57,7 @@
               alt="Rock beats scissors, scissors beats paper, and paper beats rock."
               class="rules-img"
             />
-            <div id="close-modal-button" class="button" tabindex="0"></div>
+            <button id="close-modal-button" class="button" aria-label="Close rules modal"></button>
           </div>
         </div>
       </section>
