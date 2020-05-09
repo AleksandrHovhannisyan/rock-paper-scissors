@@ -34,12 +34,12 @@
         </div>
         <div class="played-hands hidden">
           <div class="played-hand">
-            <button class="hand placeholder" id="player-hand" tabindex="-1"></button>
-            <p class="picked-text">YOU PICKED</p>
+            <button class="hand placeholder" id="player-hand" aria-hidden="true" tabindex="-1"></button>
+            <h2 class="picked-text">YOU PICKED</h2>
           </div>
           <div class="played-hand">
-            <button class="hand placeholder" id="house-hand" tabindex="-1"></button>
-            <p class="picked-text">THE HOUSE PICKED</p>
+            <button class="hand placeholder" id="house-hand" aria-hidden="true" tabindex="-1"></button>
+            <h2 class="picked-text">THE HOUSE PICKED</h2>
           </div>
           <div class="result centered hidden">
             <p id="result-text">YOU WIN</p>
@@ -48,7 +48,7 @@
         </div>
       </section>
       <section class="rules centered">
-        <button id="rules-button" aria-label="View the rules for Rock, Paper, Scissors" class="button">RULES</button>
+        <button id="rules-button" aria-label="View the rules for Rock Paper Scissors" class="button">RULES</button>
         <div class="modal-wrapper closed">
           <div class="modal-window">
             <p class="rules-heading">RULES</p>
